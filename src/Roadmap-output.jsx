@@ -12,40 +12,57 @@ class Output extends Component {
   }
 
   toggleRoadmapType(){
-    if (this.props.selectedOption == "option1"){
-        var rA = 100;
-        var rB = 300;
-        var rC = 0;
-      }else if (this.props.selectedOption == "option2"){
-        var rA = 100;
-        var rB = 250;
-        var rC = 400;
-      }else {
-        var rA = 100;
-        var rB = 225;
-        var rC = 350;
+    var rA;
+    var rB;
+    var rC;
+    var rF;
+    var cA;
+
+    if (this.props.selectedRadiusOption == "option1"){
+        rA = 100;
+        rB = 300;
+        rC = 0;
+      }else if (this.props.selectedRadiusOption == "option2"){
+        rA = 100;
+        rB = 250;
+        rC = 400;
+      }else if (this.props.selectedRadiusOption == "option3") {
+        rA = 100;
+        rB = 225;
+        rC = 350;
+      };
+
+    if (this.props.selectedArcOption == "option4"){
+        cA = 0;
+        rF= 1;
+      }else if (this.props.selectedArcOption == "option5"){
+        cA = 200;
+        rF = 0.5;
       }
-      this.updateCanvas(rA, rB, rC);
+
+    this.updateCanvas(rA, rB, rC, cA, rF);
   }
 
-  updateCanvas(rA, rB, rC) {
+  updateCanvas(rA, rB, rC, cA, rF) {
+    console.log("cA is " + cA);
       const ctx = this.refs.canvas.getContext("2d");
-        ctx.clearRect(0,0, 400, 400);
+        ctx.clearRect(0 ,0, 400, 400);
 
       const ctxA = this.refs.canvas.getContext('2d');
         ctxA.beginPath();
-        ctxA.arc(0, 0, rA, 0, 0.5 * Math.PI);
+        ctxA.arc(cA, cA, rF*rA, 0, 2 * Math.PI);
         ctxA.stroke();
 
       const ctxB = this.refs.canvas.getContext('2d');
         ctxB.beginPath();
-        ctxB.arc(0, 0, rB, 0, 0.5 * Math.PI);
+        ctxB.arc(cA, cA, rF*rB, 0, 2 * Math.PI);
         ctxB.stroke();
 
       const ctxC = this.refs.canvas.getContext('2d');
         ctxC.beginPath();
-        ctxC.arc(0, 0, rC, 0, 0.5 * Math.PI);
+        ctxC.arc(cA, cA, rF*rC, 0, 2 * Math.PI);
         ctxC.stroke();
+
   }
 
   render() {

@@ -5,26 +5,33 @@ import Output from './Roadmap-output.jsx';
 
 class App extends Component {
 
-  handleOptionChange = changeEvent => {
+  handleRadiusOptionChange = changeEvent => {
     this.setState({
-      selectedOption: changeEvent.target.value
+      selectedRadiusOption: changeEvent.target.value
+    });
+  };
+
+  handleArcOptionChange = changeEvent => {
+    this.setState({
+      selectedArcOption: changeEvent.target.value
     });
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: "option1"
+      selectedRadiusOption: "option1",
+      selectedArcOption: "option4"
     };
 
   }
 
   render() {
-    console.log("from app.js the option selected is " + this.state.selectedOption);
+    console.log("from app.js the option selected is " + this.state.selectedRadiusOption);
     return (
       <div>
-        <Input selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange.bind(this)} />
-        <Output selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange.bind(this)} />
+        <Input selectedRadiusOption={this.state.selectedRadiusOption} selectedArcOption={this.state.selectedArcOption} handleRadiusOptionChange={this.handleRadiusOptionChange.bind(this)} handleArcOptionChange={this.handleArcOptionChange.bind(this)} />
+        <Output selectedRadiusOption={this.state.selectedRadiusOption} selectedArcOption={this.state.selectedArcOption}/>
       </div>
     );
   }
