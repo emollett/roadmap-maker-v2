@@ -117,7 +117,9 @@ class Output extends Component {
     return (
       <div className="outputContainer">
         <p>Output</p>
-          <canvas ref="canvas" width={canvasSize} height={canvasSize} className="canvas" />
+          <div className="innerBox">
+            <canvas ref="canvas" width={canvasSize} height={canvasSize} className="canvas" />
+          </div>
       </div>
     );
   }

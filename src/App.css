@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+h1 {
+  font-family: 'Cabin', sans-serif;
+  padding-left: 20px;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
 /* .App-header {
   background-color: #282c34;
   display: flex;
@@ -24,9 +33,10 @@
   padding-left: 20px;
 }
 
-.input {
+.innerBox {
   grid-column: 1/2;
   padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .canvas {
