@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic roadmap creator - you can choose what type of roadmap to create. Will add printing next.
 
 ## Available Scripts
 
