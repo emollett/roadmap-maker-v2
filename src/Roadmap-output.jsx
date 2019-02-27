@@ -73,7 +73,7 @@ class Output extends Component {
   }
 
   updateCanvas(radiusA, radiusB, radiusC, centerPos, radiusFactor, wordXPos, wordYPos, nextText, laterText, lastText, xPos, yPos, align) {
-    console.log("centerPos is " + centerPos);
+
       const ctx = this.refs.canvas.getContext("2d");
         ctx.clearRect(0 ,0, canvasSize, canvasSize);
 
@@ -117,12 +117,16 @@ class Output extends Component {
     return (
       <div className="outputContainer">
         <p>Output</p>
-          <div className="innerBox">
-            <canvas ref="canvas" width={canvasSize} height={canvasSize} className="canvas" />
+          <div className="innerBox" id="output">
+            <canvas ref="canvas" id="roadmapCanvas" width={canvasSize} height={canvasSize} className="canvas" />
           </div>
       </div>
+
     );
   }
+
 }
+
+
 
 export default Output;
